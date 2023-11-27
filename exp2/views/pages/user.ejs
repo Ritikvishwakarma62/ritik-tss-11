@@ -1,0 +1,44 @@
+<%-include("../includes/header")%>
+    <div class="container my-3" style="min-height: 700px;">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h4 class="text-center"> Users</h4>
+                <form action="/user/add" method="post">
+                    <div class="my-2">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" class="form-control">
+                    </div>
+                    <div class="my-2">
+                        <label for="email">Email</label>
+                        <input type="text" name="email" id="email" class="form-control">
+                    </div>
+                    <div class="my-2">
+                        <label for="contact">contact</label>
+                        <input type="text" name="contact" id="contact" class="form-control">
+                    </div>
+                    <div class="my-2">
+                        <label for="country">Country</label>
+                       <select name="country" id="country" class="form-control">
+                        <option value="">select</option>
+                        <% result.forEach((value)=>{%>
+                            <option value="<%-value.name%>"><%-value.name%></option>
+                      <%  }) %>
+                       </select>
+                    </div>
+                    <div class="my-2">
+                        <label for="gender">Gender</label>
+                        <label for="male">Male</label><input type="radio" value="male" name="gender" id="male">
+                        <label for="female">Female</label><input type="radio" value="female" name="gender" id="female">
+                    </div>
+                    <div class="my-2">
+                        <label for="adderss">Adderss</label>
+                        <textarea name="adderss" class="form-control" id="adderss" ></textarea>
+                    </div>
+                    <div class="my-2">
+                        <input type="submit" class="btn btn-info btn">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <%-include("../includes/footer")%>

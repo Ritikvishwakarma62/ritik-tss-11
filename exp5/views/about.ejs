@@ -1,0 +1,41 @@
+<html>
+
+<head>
+
+</head>
+<style>
+    body {
+        background-color: #48a43a;
+    }
+</style>
+
+<body>
+    <h1>home page</h1>
+    <%
+    let a =7;
+    let b =1;
+    let c = a*b;
+    if(c>1000){%>
+        <%-c%>
+        <%
+    } 
+    else{%>
+        <h1>mumbai</h1>
+        <%
+    }
+    %>
+    
+    <!-- <% 
+    for(let a = 1; a <= 20; a++)
+    { %>
+        
+        <h2> <%- a %> </h2>
+
+
+   <% 
+    }
+%> -->
+    
+</body>
+
+</html>

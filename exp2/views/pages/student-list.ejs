@@ -1,0 +1,35 @@
+<%-include("../includes/header")%>
+    <div class="container my-3" style="min-height: 700px;">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h4 class="text-center">List Of All Students</h4>
+                <% if(result.length > 0){ %>
+                <table class="table table-info table-border table-hover table-striped">
+                    <tr>
+                        <th>S.no.</th>
+                        <th>Name</th>
+                        <th>Fees</th>
+                        <th>Contact </th>
+                        <th>Edit </th>
+                        <th>Delete </th>
+                    </tr>
+                  <% result.forEach((value,index)=>{%>
+                    <tr>
+                        <td><%-index+1%></td>
+                        <td><%-value.name%></td>
+                        <td><%-value.fee%></td>
+                        <td><%-value.contact%></td>
+                        <td><a href="/student/edit/<%-value._id%>" class="btn btn-success btn-sm">Edit</a></td>
+                        <td><a href="/student/delete/<%-value._id%>" class="btn btn-danger btn-sm">Delete</a></td>
+                    </tr>
+                  <% }) %>
+                </table>
+               <% } else{%>
+                <div class="alert alert-danger">
+                    No Record Foun !
+                </div>
+              <% } %>
+            </div>
+        </div>
+    </div>
+    <%-include("../includes/footer")%>

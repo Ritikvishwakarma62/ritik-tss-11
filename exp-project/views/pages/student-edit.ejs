@@ -1,0 +1,47 @@
+    <%-include("../includes/header")%>
+    <div class="container my-2" style="min-height: 900px;">
+        <div class="row">
+            
+            <h4 class="text-center">student Registration Form</h4>
+            <div class="col-md-6 offset-md-3">
+                <form action="/student/update/<%-edit._id%>" method="post">
+                    <div class="my-2">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" value="<%-edit.name%>" id="name" class="form-control border border-dark">
+                    </div>
+                    <div class="my-2">
+                        <label for="fee">fee</label>
+                        <input type="text" name="fee" value="<%-edit.fee%>" id="fee" class="form-control border border-dark">
+                    </div>
+                    <div class="my-2">
+                        <label for="contact">Contact</label>
+                        <input type="text" name="contact" value="<%-edit.contact%>" id="contact" class="form-control border border-dark">
+                    </div>
+                    <div class="my-3">
+                        <label>Class</label>
+                        <select name="class" class="form-control">
+                            <option>Select Class</option>
+                            <% for(var i=1; i<=12; i++){ %>
+                                <option <% if(edit.class == i){ %> selected <% } %>><%- i %></option>
+                            <% } %>
+                        </select>
+                    </div>
+                    <div class="my-2">
+                        <label for="gender">Gender</label></br>
+                    <label for="male">Male</label><input type="radio" <% if(edit.gender == "male"){%> checked <%}%> name="gender" id="male" value="male">
+                    <label for="female">Female</label> <input type="radio" name="gender" id="female" value="female">
+                    </div>
+                    <div class="my-2">
+                        <label for="address">address</label>
+                        <textarea name="address" id="Address" class="form-control border border-dark"><%-edit.address%></textarea>
+                    </div>
+                    <div>
+                        <input type="submit" value="Update" class="btn btn-primary">
+                    </div>
+                </form>
+            </div>
+        </div> 
+    </div>
+
+    <%-include("../includes/footer")%>
+

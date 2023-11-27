@@ -1,0 +1,40 @@
+<%-include("../includes/header")%>
+<div class="container my-2" style="min-height: 890px;">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h2 class="text-center">SignUp</h2>
+          <form action="/signup/update/<%-signup._id%>" method="post">
+            <div class="my-2">
+                <label for="name" class="my-2">Name</label>
+                <input type="text" name="name" value="<%-signup.name%>" id="name" class="form-control">
+            </div>
+            <div class="my-2">
+                <label for="email" class="my-2">Email</label>
+                <input type="text" name="email" value="<%-signup.email%>" id="email" class="form-control">
+            </div>
+            <div class="my-2">
+                <label for="contact" class="my-2">Contact</label>
+                <input type="text" name="contact" value="<%-signup.contact%>" id="contact" class="form-control">
+            </div>
+            <div class="my-2">
+                <label for="gender" class="my-2">gender</label>
+             <label for="male">Male</label> <input type="radio" value="male" name="gender" id="male" <% if(signup.gender == "male"){ %>checked <% } %>>
+             <label for="female">Female</label> <input type="radio" value="female" name="gender" id="female" <% if(signup.gender == "female"){ %>checked <% } %>>
+            </div>
+            <div class="my-2">
+                <label for="">Country</label>
+                <select name="country" id="" class="form-control">
+                    <option value="">Select</option>
+                    <% result.forEach((value)=>{%>
+                        <option value="<%-value.name%>" <% if(signup.country ==value.name){ %>selected <% } %>><%-value.name%></option>
+                  <%  }) %>
+                </select>
+            </div>
+            <div class="my-2">
+                <input type="submit" value="Updata" class="btn btn-warning">
+            </div>
+          </form>
+        </div>
+    </div>
+</div>
+<%-include("../includes/footer")%>

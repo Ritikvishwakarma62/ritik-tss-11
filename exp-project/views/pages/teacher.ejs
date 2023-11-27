@@ -1,0 +1,42 @@
+<%-include("../includes/header")%>
+<div class="container my-2">
+    <div class="row">
+        <h4 class="text-center">Teacher Registration Form</h4>
+        <div class="col-md-6 offset-md-3">
+            <form action="/teacher/form" method="post">
+                <div class="my-2">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" class="form-control border border-dark">
+                </div>
+                <div class="my-2">
+                    <label for="salary">Salary</label>
+                    <input type="text" name="salary" id="salary" class="form-control border border-dark">
+                </div>
+                <div class="my-2">
+                    <label for="contact">Contact</label>
+                    <input type="text" name="contact" id="contact" class="form-control border border-dark">
+                </div>
+                <div class="my-2">
+                    <label for="education">Education</label>
+                    <select name="education" id="education"  class="form-control border border-dark">
+                        <option value="select">select</option>
+                        <option value="BA">BA</option>
+                        <option value="b.com">B.com</option>
+                        <option value="b.sc">B.sc</option>
+                        <option value="m.sc">M.sc</option>
+                        <option value="b.pharma">B.pharma</option>
+                    </select>
+                </div>
+                <div class="my-2">
+                    <label for="address">address</label>
+                    <textarea name="address" id="Address" class="form-control border border-dark"></textarea>
+                </div>
+                <div>
+                    <input type="submit" value="save" class="btn btn-primary">
+                </div>
+            </form>
+        </div>
+    </div> 
+</div>
+
+<%-include("../includes/footer")%>

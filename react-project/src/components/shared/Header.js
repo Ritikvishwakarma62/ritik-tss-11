@@ -1,3 +1,6 @@
+import React from "react"
+import {NavLink} from "react-router-dom"
+
 let Header = ()=>{
     return(
         <>
@@ -12,16 +15,16 @@ let Header = ()=>{
                 <div id="navbar" className=" navbar-collapse">
                     <ul className="nav navbar-nav">
                         <li className="nav-item">
-                            <a href="/" className="nav-link text-light"><b>Home</b></a>
+                            <NavLink to="/" className="nav-link text-light"><b>Home</b></NavLink>
                         </li>
                         <li className="nav-item">
-                            <a href="/" className="nav-link text-light"><b>About</b></a>
-                        </li>
+                            <NavLink to="/about" className="nav-link text-light"><b>About</b></NavLink>
+                        </li> 
                         <li className="nav-item">
-                            <a href="/" className="nav-link text-light"><b>Contact</b></a>
+                            <NavLink to="/contact" className="nav-link text-light"><b>Contact</b></NavLink>
                         </li>
                     </ul>
-                </div>
+                </div>  
                 </div>
             </nav>
         

@@ -1,10 +1,35 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 const Contact = () => {
+    let [num, setNum] = useState(13);
+    
+    let sub = ()=>{
+      setNum(()=>{
+        let a = num;
+        let b = a % 2 == 0?"indore":"mumbai";
+        return b
+      })
+    }
+    let add = ()=>{
+      setNum(()=>{
+        let x = num+1;
+        return x
+      })
+    }
+    let add2 = ()=>{
+      setNum(()=>{
+        let x = num-1;
+        return x
+      })
+    }
+
   return (
       <>
-      <div>Contact</div>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit iusto harum, est quae debitis dolore itaque esse eligendi animi. Cum at voluptatibus distinctio facilis minus explicabo adipisci, voluptatum impedit pariatur odit rerum. Distinctio temporibus quis totam iure ducimus praesentium autem maiores ab blanditiis tenetur? Earum nobis vel, facere aspernatur quae necessitatibus, sapiente repellat asperiores consectetur sequi soluta error excepturi. Autem unde tempora quia nisi ex perferendis aut suscipit vitae vero rerum ea impedit itaque nobis porro eum, pariatur error magni fugiat quam facere, voluptas atque? Ratione magnam illum neque.</p>
+      <h1>{num}</h1>
+      <button onClick={sub} className='btn btn-warning'>Add</button>
+      <button onClick={add} className='btn btn-warning'>+</button>
+      <button onClick={add2} className='btn btn-warning'>-</button>
+     
     
     </>
   )

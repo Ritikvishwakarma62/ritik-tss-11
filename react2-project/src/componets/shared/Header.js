@@ -7,7 +7,11 @@ const Header = () => {
      <nav className="navbar bg-dark navbar-dark navbar-expand-sm">
 
 <div className="container">
- <a href="" className="navbar-brand"> Nature</a>
+    <h5 className='p-1' style={{color : "white"}}>
+    <i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
+    </h5>
+
+     <a href="" className="navbar-brand "> <b>Instagram</b> </a>
 
  <button className="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
      <span className="navbar-toggler-icon"></span>
@@ -23,6 +27,9 @@ const Header = () => {
      </li>
      <li className="nav-item">
          <NavLink to="/contact" className="nav-link">Contact</NavLink>
+     </li>
+     <li className="nav-item">
+         <NavLink to="/practice" className="nav-link">Practice</NavLink>
      </li>
  </ul>
 </div>

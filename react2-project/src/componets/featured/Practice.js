@@ -55,7 +55,7 @@ const Practice = () => {
                 <div className="col-md-4">
                     <div className="card">
                         <div className="card-header">
-                            <img src="assets/imges/4.jpeg" style={{height : "50px",width:'50px', borderRadius : "40px"}} alt="" />
+                            <img src="assets/imges/4.jpeg" style={{height : "50px",width:'50px', borderRadius : "30px"}} alt="" />
                             <b className='m-2'>ritik_vishwakarma_45</b>
                         </div>
                         <div className="card-body">

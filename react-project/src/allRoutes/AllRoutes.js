@@ -8,6 +8,7 @@ import Demo2 from '../components/featured/Demo2'
 import Demo3 from '../components/featured/Demo3'
 import Demo4 from '../components/featured/Demo4'
 import Demo5 from '../components/featured/Demo5'
+import Demo6 from '../components/featured/Demo6'
 
 const AllRoutes = () => {
     return (
@@ -21,6 +22,7 @@ const AllRoutes = () => {
                 <Route path='demo3' element={<Demo3/>} />
                 <Route path='demo4' element={<Demo4/>} />
                 <Route path='demo5' element={<Demo5/>} />
+                <Route path='demo6' element={<Demo6/>} />
             </Routes>
         </>
     )

@@ -1,18 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useFormik } from "formik";
-import * as YUP from "yup";
 
-const signupSchema = YUP.object({
-    name: YUP.string().required("Enter Your Name"),
-    email: YUP.string().required("Enter Your Email/UserName"),
-    password: YUP.string().required("Enter Your Password"),
-    repassword: YUP.string().required("Enter Your Repassword"),
-    state: YUP.string().required("Select Your State"),
-    city: YUP.string().required("Select Your City"),
-    address: YUP.string().required("Enter Your Address"),
-    gender: YUP.string().required("Enter Your Gender")
-})
+import signupSchema from '../../schemas/SignupSchema';
+import { API_URL } from '../../util/API_URL';
+
+
 
 const SignUp = () => {
 
@@ -26,33 +19,32 @@ const SignUp = () => {
             state: "",
             city: "",
             address: "",
-            gender: ""
+            gender: "",
+            contact : ""
         },
         onSubmit: (formdata) => {
-            console.log(formdata)
+            axios.post(`${API_URL}signup`, formdata).then(response=>{
+                console.log(response.data);
+            })
+
         }
 
-    })
+    });
 
     let [state, setState] = useState([]);
     let [city, setCity] = useState([])
 
     useEffect(() => {
-        axios.get("http://localhost:4545/api/city/state").then(response => {
+        axios.get(`${API_URL}city/state`).then(response => {
             setState(response.data)
         })
     }, [])
 
-    useEffect(() => {
-        axios.get("http://localhost:4545/api/city").then(response => {
-            // console.log(response.data)
-
-        })
-    }, [])
+   
 
     let getCity = (event) => {
         let x = event.target.value
-        axios.get("http://localhost:4545/api/city/getcity/" + x).then(response => {
+        axios.get(`${API_URL}city/getcity/${x}`).then(response => {
             setCity(response.data)
         })
     }
@@ -129,6 +121,14 @@ const SignUp = () => {
                                         signupForm.errors.address && signupForm.touched.address ? <small className='text-danger' >{signupForm.errors.address} </small> : ""
                                     }
                                 </div>
+                                <div className="my-2">
+                                    <label htmlFor="contact">contact</label>
+                                    <input type="text" name='contact' onChange={signupForm.handleChange} className={"form-control " + (signupForm.errors.contact && signupForm.touched.contact ? "is-invalid" : '')}  />
+                                    {
+                                        signupForm.errors.contact && signupForm.touched.contact ? <small className='text-danger' >{signupForm.errors.contact} </small> : ""
+                                    }
+                                </div>
+
                                 <div className="my-2">
                                     <label htmlFor="gender">Gender</label>
                                     <label htmlFor='male' >male</label><input type="radio" value="male" name='gender' id='male' onChange={signupForm.handleChange} />

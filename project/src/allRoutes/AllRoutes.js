@@ -6,6 +6,7 @@ import FeatureCart from '../components/feature/FeatureCart';
 import Cart from '../components/feature/Cart';
 import About from '../components/feature/About';
 import SignUp from '../components/feature/SignUp';
+import Login from '../components/feature/Login';
 const AllRoutes = () => {
   return (
     <>
@@ -16,6 +17,7 @@ const AllRoutes = () => {
         <Route path='cart' element={<Cart/>}/>
         <Route path='about' element={<About/>}/>
         <Route path='signup' element={<SignUp/>}/>
+        <Route path='login' element={<Login/>}/>
     </Routes>
     </>
   )

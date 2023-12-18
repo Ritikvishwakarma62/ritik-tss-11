@@ -4,11 +4,12 @@ import { useFormik } from "formik";
 
 import signupSchema from '../../schemas/SignupSchema';
 import { API_URL } from '../../util/API_URL';
+import {useNavigate} from "react-router-dom"
 
 
 
 const SignUp = () => {
-
+    let navigate = useNavigate()
     let signupForm = useFormik({
         validationSchema: signupSchema,
         initialValues: {
@@ -24,8 +25,11 @@ const SignUp = () => {
         },
         onSubmit: (formdata) => {
             axios.post(`${API_URL}signup`, formdata).then(response=>{
-                console.log(response.data);
-            })
+                if(response.data.success==true)
+                {
+                    navigate("/login");
+                }
+            });
 
         }
 
@@ -38,7 +42,7 @@ const SignUp = () => {
         axios.get(`${API_URL}city/state`).then(response => {
             setState(response.data)
         })
-    }, [])
+    }, []);
 
    
 
@@ -130,9 +134,9 @@ const SignUp = () => {
                                 </div>
 
                                 <div className="my-2">
-                                    <label htmlFor="gender">Gender</label>
-                                    <label htmlFor='male' >male</label><input type="radio" value="male" name='gender' id='male' onChange={signupForm.handleChange} />
-                                    <label htmlFor='female'>female</label> <input type="radio" value="female" name='gender' id='female' onChange={signupForm.handleChange} />
+                                    <label htmlFor="gender">Gender</label> <br/>
+                                    <label htmlFor='male' >Male</label><input type="radio" value="male" name='gender' id='male' onChange={signupForm.handleChange} /> 
+                                    <label htmlFor='female'>Female</label> <input type="radio" value="female" name='gender' id='female' onChange={signupForm.handleChange} />
                                     {
                                         signupForm.errors.gender && signupForm.touched.gender ? <small className='text-danger' >{signupForm.errors.gender} </small> : ""
                                     }

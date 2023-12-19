@@ -96,7 +96,7 @@ const SignUp = () => {
                                     <select onChange={(event) => { getCity(event); signupForm.handleChange(event) }} name='state' className={"form-control " + (signupForm.errors.state && signupForm.touched.state ? "is-invalid" : '')} >
                                         <option value="">select</option>
                                         {
-                                            state.map(value => <option>{value}</option>)
+                                            state.map((value,index) => <option key={index} >{value}</option>)
                                         }
                                         
 

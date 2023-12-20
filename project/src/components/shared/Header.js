@@ -1,10 +1,10 @@
 import React from 'react'
-import {NavLink} from "react-router-dom"
+import { NavLink } from "react-router-dom"
 const Header = () => {
   return (
-    
+
     <>
-           <header>
+      <header>
         <div className="container-menu-desktop">
 
           <div className="top-bar">
@@ -33,7 +33,7 @@ const Header = () => {
             </div>
           </div>
 
-           <div className="container"> {/* wrap-menu-desktop */}
+          <div className="container"> {/* wrap-menu-desktop */}
             <nav className="limiter-menu-desktop container  ">
               <NavLink to="#" className="logo">
                 <img src="/assets/images/icons/logo-01.png" alt="IMG-LOGO" />
@@ -43,39 +43,25 @@ const Header = () => {
                 <ul className="main-menu">
                   <li className="active-menu">
                     <NavLink to="/">Home</NavLink>
-                    <ul className="sub-menu">
-                      <li><NavLink to="index.html">Homepage 1</NavLink></li>
-                      <li><NavLink to="home-02.html">Homepage 2</NavLink></li>
-                      <li><NavLink to="home-03.html">Homepage 3</NavLink></li>
-                    </ul>
                   </li>
 
-                  <li>
-                    <NavLink to="/shop">Shop</NavLink>
-                  </li>
+                  <li> <NavLink to="/about">About</NavLink></li>
+                  <li> <NavLink to="contact.html">Contact</NavLink></li>
 
-                  <li className="label1" data-label1="hot">
-                    <NavLink to="/feature">Features</NavLink>
-                  </li>
+                  {
+                    localStorage.getItem("access-token") ?
+                      <>
+                        <li><NavLink to="/my-account">My Account</NavLink> </li>
+                        <li><NavLink to="/logout">Logout</NavLink> </li>
+                      </>
+                      :
+                      <>
+                        <li> <NavLink to="/signup">Signup</NavLink> </li>
+                        <li>  <NavLink to="/login">Login</NavLink> </li>
+                      </>
+                  }
 
-                  <li>
-                    <NavLink to="blog.html">Blog</NavLink>
-                  </li>
 
-                  <li>
-                    <NavLink to="/about">About</NavLink>
-                  </li>
-
-                  <li>
-                    <NavLink to="contact.html">Contact</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/signup">Signup</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/login">Login</NavLink>
-                  </li>
-                  
                 </ul>
               </div>
 
@@ -208,7 +194,7 @@ const Header = () => {
             </form>
           </div>
         </div>
-      </header>    
+      </header>
     </>
   )
 }

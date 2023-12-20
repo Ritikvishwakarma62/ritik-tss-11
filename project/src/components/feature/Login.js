@@ -16,8 +16,10 @@ const Login = () => {
         },
         onSubmit: (data) => {
             axios.post(`${API_URL}auth`,data).then(response=>{
+                
                 if(response.data.success == true)
                 {
+                    localStorage.setItem("access-token", response.data.token)
                     navigate("/");
                 }
 
@@ -61,7 +63,7 @@ const Login = () => {
                                     </div>
                                 </div>
                                 <div className="card-header">
-                                    <button className='btn btn-success'>Login</button>
+                                    <button type='submit' className='btn btn-success'>Login</button>
                                     {
                                         errMsg ? <div className='alert alert-danger my-2'>{errMsg }</div> : ''
                                     }

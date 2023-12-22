@@ -4,7 +4,7 @@ import { Navigate } from 'react-router-dom'
 const Logout = () => {
     localStorage.removeItem("access-token");
   return (
-    <Navigate to="/login"/>
+    <Navigate to="/login" />
   )
 }
 

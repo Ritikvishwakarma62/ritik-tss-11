@@ -8,6 +8,7 @@ import About from '../components/feature/About';
 import SignUp from '../components/feature/SignUp';
 import Login from '../components/feature/Login';
 import Logout from '../components/feature/Logout';
+import MyProfile from '../components/feature/MyProfile';
 const AllRoutes = () => {
   return (
     <>
@@ -19,6 +20,7 @@ const AllRoutes = () => {
         <Route path='about' element={<About/>}/>
         <Route path='signup' element={<SignUp/>}/>
         <Route path='login' element={<Login/>}/>
+        <Route path='my-profile' element={<MyProfile/>}/>
         <Route path='logout' element={<Logout/>}/>
     </Routes>
     </>

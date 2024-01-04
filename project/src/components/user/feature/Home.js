@@ -6,7 +6,6 @@ import Banner from '../shared/Banner'
 const Home = () => {
   return (
     <>
-    
     <Slider/>
     <Banner/>
     <Product/>

@@ -1,7 +1,7 @@
-import React,{useState} from 'react';
+import React,{useState} from 'react'
 import { useFormik } from "formik";
-import loginSchema from '../../schemas/LoginSchema';
-import { API_URL } from '../../util/API_URL';
+import loginSchema from '../../../schemas/LoginSchema';
+import { API_URL } from '../../../util/API_URL';
 import axios from 'axios';
 import {useNavigate} from "react-router-dom";
 

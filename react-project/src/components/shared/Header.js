@@ -23,10 +23,28 @@ let Header = () => {
                             <li className="nav-item">
                                 <NavLink to="/contact" className="nav-link text-light"><b>Contact</b></NavLink>
                             </li>
-                            <li className="nav-item">
-                                <NavLink to="/demo" className="nav-link text-light"><b>Demo</b></NavLink>
+                            {
+                                localStorage.getItem("access-token")?
+                                <>
+                                  <li className="nav-item">
+                                <NavLink to="/profile" className="nav-link text-light"><b>Profile</b></NavLink>
                             </li>
-                            <li className="nav-item">
+                                  <li className="nav-item">
+                                <NavLink to="/logout" className="nav-link text-light"><b>Logout</b></NavLink>
+                            </li>
+                                </>
+                                :
+                                <>
+                                  <li className="nav-item">
+                                <NavLink to="/login" className="nav-link text-light"><b>Login</b></NavLink>
+                            </li>
+                                </>
+                            }
+                          
+                            {/* <li className="nav-item">
+                                <NavLink to="/demo" className="nav-link text-light"><b>Demo</b></NavLink>
+                            </li> */}
+                            {/* <li className="nav-item">
                                 <NavLink to="/demo2" className="nav-link text-light"><b>Demo2</b></NavLink>
                             </li>
                             <li className="nav-item">
@@ -40,7 +58,7 @@ let Header = () => {
                             </li>
                             <li className="nav-item">
                                 <NavLink to="/demo6" className="nav-link text-light"><b>Demo6</b></NavLink>
-                            </li>
+                            </li> */}
                         </ul>
                     </div>
                 </div>

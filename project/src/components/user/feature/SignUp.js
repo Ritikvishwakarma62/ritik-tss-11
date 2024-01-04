@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useFormik } from "formik";
-
-import signupSchema from '../../schemas/SignupSchema';
-import { API_URL } from '../../util/API_URL';
+import signupSchema from '../../../schemas/SignupSchema';
+import { API_URL } from '../../../util/API_URL';
 import {useNavigate} from "react-router-dom";
-
-
 
 const SignUp = () => {
     let navigate = useNavigate()
@@ -43,8 +40,6 @@ const SignUp = () => {
             setState(response.data)
         })
     }, []);
-
-   
 
     let getCity = (event) => {
         let x = event.target.value

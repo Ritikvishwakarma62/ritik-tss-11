@@ -13,6 +13,7 @@ import UserModule from '../modules/UserModule';
 import AdminModule from '../modules/AdminModule';
 import AdminLogin from '../components/admin/feature/AdminLogin';
 import Deshboard from '../components/admin/feature/Deshboard';
+import AdminLogout from '../components/admin/feature/AdminLogout';
 const AllRoutes = () => {
   return (
     <>
@@ -30,8 +31,9 @@ const AllRoutes = () => {
         </Route>
 
         <Route path='admin'element={<AdminModule/>} >
-          <Route path='login' element={<AdminLogin/>} />
+          <Route path='' element={<AdminLogin/>} />
           <Route path='deshboard' element={<Deshboard/>} />
+          <Route path='logout' element={<AdminLogout/>} />
         </Route>
       </Routes>
     </>
